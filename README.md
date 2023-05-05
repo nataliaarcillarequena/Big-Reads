@@ -1,7 +1,7 @@
 # Big-Reads
 Scalable application for viewing meta data on all books in the world
 
-Database: NoSQL via Cassandra hosted by Datastax 
+Database: NoSQL via Cassandra hosted by Datastax  
 Language and framework: Java Spring Boot  
 Data Source: Authors and Books data snapshot from the Open Library  
 APIs: Open library API for book search  
