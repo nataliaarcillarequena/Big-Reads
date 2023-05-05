@@ -8,4 +8,4 @@ APIs: Open library API for book search
 Front-end: Thymeleaf, Custom CSS, Bootstrap  
 Secure Login: Spring Security with GitHub authentication  
 
-The betterreads-data-loader is a small app designed to load the books data (source: Open Library) to the Cassandra database 
+betterreads-data-loader is a small app designed to load the books data (source: Open Library) to the Cassandra database 
