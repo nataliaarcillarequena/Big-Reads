@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<body>
+
+	<div th:fragment="search-books">
+		<form th:action="@{/search}">
+	     	Search Books
+	     	<input type = "text" name = "searchInput">
+	     	<input type = "submit" value = "Search">
+     	</form>
+	</div>
+
+	<div th:fragment="go-home">
+		<form th:action="@{/home}">
+     		<input type = "submit" value = "Home">
+     	</form>
+	</div>
+
+	<div th:fragment="logout">
+		<form th:action = "@{/logout}" method="post" > <!-- in spring security, the logout is the default path to 
+	     log out- spring security set up in SecurityAdapter- need to use th:action to get it -->
+	     	<input type = "submit" value = "Sign Out">
+	     </form>
+	</div>
+	
+	<!-- search bar -->
+	<div th:fragment="search-bar">
+		<div class = "search-box"  >
+	    <form  class="d-flex" action = "./search">
+			<input class="form-control me-2" type="text" placeholder="Search the library" aria-label="Search" name = "searchInput">
+			<button class="btn btn-outline-primary" type="submit">Search</button>
+		</form>
+		</div>
+	</div>
+	
+	<!-- Nav Bar -->
+	<div th:fragment="nav-bar">
+		<nav class="navbar fixed-top navbar-dark" style="background-color:SlateBlue;">
+		  <div class="container-fluid">
+		    <span class="navbar-brand mb-0 h1"><h2>Big Reads</h2></span>
+		  </div>
+		</nav>
+	</div>
+	
+	<!-- Nav bar with home /and logout -->
+	<div th:fragment="nav-bar-home">
+		<nav class="navbar fixed-top navbar-dark" style="background-color:SlateBlue;">
+		  <div class="container-fluid">
+		    <span class="navbar-brand mb-0 h1"><h2>Big Reads</h2></span>
+		    <ul class="nav justify-content-end">
+			  <li class="nav-item">
+			    <a class="nav-link" th:href="@{/home}"><h4>Home</h4></a>
+			  </li>
+			  <li th:if = "${loginId}" class="nav-item">
+			    <form th:action = "@{/logout}" method="post" > <!-- in spring security, the logout is the default path to 
+	     log out- spring security set up in SecurityAdapter- need to use th:action to get it -->
+	     			<input class="nav-link" type = "submit" value = "Sign Out">
+	    		 </form>
+			  </li>
+			</ul>
+		  </div>
+		</nav>
+	</div>
+
+</body>
+</html>

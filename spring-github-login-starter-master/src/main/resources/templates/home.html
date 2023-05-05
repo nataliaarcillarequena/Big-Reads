@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link th:href = "@{style.css}" rel="stylesheet"/>
+    <title>Big Reads</title>
+    <meta name="description" content="" />
+    <base href="/" />
+  </head>
+  <body>
+  
+    <!-- nav bar with home button and logout if logged in-->
+	<div th:insert = "components/buttons :: nav-bar-home"></div>
+
+	<br><br><br><br>
+
+	<div class = "container">
+
+		<p>Welcome to Big Reads Home.</p>
+		
+		<!-- search bar- not working correctly - seems to not be connecting well to the buttons html  -->
+		<div th:insert = "components/buttons :: search-bar"></div>
+		
+		<h1>My Books</h1>
+		
+		<div th:each = "bookUser: ${booksByUser}"> <!-- for each book in the search result, this is looping over the books-->
+			<h6 th:text = "${bookUser.bookName}" ></h6>
+			<h6 th:text = "${bookUser.readingStatus}" ></h6>
+			
+			<h6 th:text = "${bookUser.bookId}" ></h6>
+			<a th:href = "@{'/books/'+${bookUser.bookId}}">View book</a>
+			<h6>-----------------------------------------------</h6>
+		</div>
+		
+	    
+    </div>
+    
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
+  </body>
+</html>
