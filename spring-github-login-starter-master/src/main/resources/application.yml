@@ -5,7 +5,7 @@ spring:
         registration:
           github:
             client-id: Iv1.e3277de4279ef38a  #asking guthub to authenticate for us - these fields are taken from github setup of this app
-            client-secret: 2d568a889c136ae5f1ee8f6431d4d84e69250aa7
+            client-secret: <client-secret>
             
             #NEED SPRING APPLICATION NAME??????????????
   data:
